@@ -25,7 +25,7 @@
    width:250px;
  }
 .btn-end{
-margin-top: 2.75rem;
+margin-top: 15.25rem;
 }
 </style>
 
@@ -38,26 +38,26 @@ margin-top: 2.75rem;
 <a href="/viewClientList" class="btn" >Клиенты</a>
             </div>
 <div class="section-center services-center">
-<a href="/viewClientList" class="btn" >Факты обращения</a>
+<a href="/ViewTreatmentFactsList" class="btn" >Факты обращения</a>
             </div>
 <div class="section-center services-center">
-<a href="/viewClientList" class="btn" >Оформленные вклады</a>
+<a href="/ViewDepositOpenedList" class="btn" >Оформленные вклады</a>
             </div>
 <div class="section-center services-center">
-<a href="/viewClientList" class="btn" >Вклады</a>
+<a href="/viewDepositList" class="btn" >Вклады</a>
             </div>
 <div class="section-center services-center">
-<a href="/viewClientList" class="btn" >Сотрудник</a>
+<a href="/viewEmployeeList" class="btn" >Сотрудник</a>
             </div>
+<!-- <div class="section-center services-center">
+    <a href="/viewClientList" class="btn" >Должность</a>
+</div>
 <div class="section-center services-center">
-<a href="/viewClientList" class="btn" >Должность</a>
-            </div>
+    <a href="/viewClientList" class="btn" >Задействованные документы</a>
+</div>
 <div class="section-center services-center">
-<a href="/viewClientList" class="btn" >Задействованные документы</a>
-            </div>
-<div class="section-center services-center">
-<a href="/viewClientList" class="btn" >Регламентирующие документы</a>
-            </div>
+    <a href="/viewClientList" class="btn" >Регламентирующие документы</a>
+</div> -->
 <div class="section-center services-center btn-end">
 <a href="/main" class="btn" >На главную</a>
             </div>

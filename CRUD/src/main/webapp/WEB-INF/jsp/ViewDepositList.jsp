@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/App.css">
-    <title>View Client List</title>
+    <title>View Deposit List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -22,12 +22,17 @@
              .btn {
                background: var(--clr-primary-5);
                color: white;
+
              }
+            .btn-add {
+
+                           width:1205px;
+                         }
             .btn-success {
-              border-color: var(--clr-primary-5); /* Измените цвет рамки на цвет вашего фона */
+              border-color: var(--clr-primary-5); /* Change border color to your background color */
             }
             .btn-danger {
-              border-color: var(--clr-primary-5); /* Измените цвет рамки на цвет вашего фона */
+              border-color: var(--clr-primary-5); /* Change border color to your background color */
             }
 
     .btn-end{
@@ -38,58 +43,66 @@
         display: inline-block;
         width: 300px;
         vertical-align: middle;
+
     }
     @media (min-width: 576px) {
         .ml-sm-3, .mx-sm-3 {
-            margin-left: 0 !important; /* Устанавливаем отступ на 0 */
+            margin-left: 0 !important; /* Set margin to 0 */
         }
+        /*.container {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Центрирование элементов по горизонтали */
+            }*/
         </style>
 </head>
 <body>
 <div class="container">
-    <h1 class="p-3">Клиенты</h1>
-    <form action="/getClientsByPassport" method="GET" class="form-inline">
+    <h1 class="p-3">Депозиты</h1>
+    <form action="/getDepositsByDepositName" method="GET" class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
-            <label for="passport" class="sr-only">Паспорт</label>
-            <input type="text" class="form-control" id="passport" name="passport" placeholder="Введите ФИО">
+            <label for="depositName" class="sr-only">Имя депозита</label>
+            <input type="text" class="form-control" id="depositName" name="depositName" placeholder="Введите имя депозита">
         </div>
-        <button type="submit" class="btn mb-2">Получить клиентов</button>
+        <button type="submit" class="btn mb-2">Получить депозиты</button>
     </form>
 
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
-            <th>ФИО</th>
-            <th>Адрес</th>
-            <th>Номер телефона</th>
-            <th>Паспорт</th>
-            <th>Тип клиента</th>
+            <th>Имя депозита</th>
+            <th>Продолжительность</th>
+            <th>Сумма</th>
+            <th>Тип расчета процентов</th>
+            <th>Процентная ставка</th>
+            <th>Валюта</th>
             <th>Редактировать</th>
             <th>Удалить</th>
         </tr>
-        <c:forEach var="client" items="${clients}">
+        <c:forEach var="deposit" items="${deposits}">
             <tr>
-                <td>${client.id}</td>
-                <td>${client.fio}</td>
-                <td>${client.address}</td>
-                <td>${client.phone_number}</td>
-                <td>${client.passport}</td>
-                <td>${client.client_type}</td>
+                <td>${deposit.id}</td>
+                <td>${deposit.depositName}</td>
+                <td>${deposit.duration}</td>
+                <td>${deposit.amount}</td>
+                <td>${deposit.interestCalculationType}</td>
+                <td>${deposit.interestRate}</td>
+                <td>${deposit.currency}</td>
                 <td>
                     <button type="button" class="btn btn-success">
-                        <a href="/editClient/${client.id}">Редактировать</a>
+                        <a href="/editDeposit/${deposit.id}">Редактировать</a>
                     </button>
                 </td>
                 <td>
                     <button type="button" class="btn btn-danger">
-                        <a href="/deleteClient/${client.id}">Удалить</a>
+                        <a href="/deleteDeposit/${deposit.id}">Удалить</a>
                     </button>
                 </td>
             </tr>
         </c:forEach>
     </table>
 
-    <a href="/AddClient" class="btn btn-block">Добавить нового клиента</a>
+    <a href="/AddDeposit" class="btn btn-block btn-add">Добавить новый депозит</a>
 
     <div style="display: flex; justify-content: center;margin-top: 20px;">
         <ul style="list-style: none;">
@@ -112,13 +125,13 @@
         } else if (msg === "Get Failure") {
             toastr["error"]("Ошибка при получении данных", "", { "progressBarColor": "#dc3545" });
         } else if (msg === "Save Success") {
-            toastr["success"]("Клиент успешно добавлен", "", { "progressBarColor": "#007bff" });
+            toastr["success"]("Депозит успешно добавлен", "", { "progressBarColor": "#007bff" });
         } else if (msg === "Delete Success") {
-            toastr["success"]("Клиент успешно удалён", "", { "progressBarColor": "#007bff" });
+            toastr["success"]("Депозит успешно удален", "", { "progressBarColor": "#007bff" });
         } else if (msg === "Delete Failure") {
-            toastr["error"]("Произошла ошибка, клиент не был удален", "", { "progressBarColor": "#dc3545" });
+            toastr["error"]("Произошла ошибка, депозит не был удален", "", { "progressBarColor": "#dc3545" });
         } else if (msg === "Edit Success") {
-            toastr["success"]("Данные клиента успешно изменены", "", { "progressBarColor": "#007bff" });
+            toastr["success"]("Данные депозита успешно изменены", "", { "progressBarColor": "#007bff" });
         }
 
         toastr.options = {

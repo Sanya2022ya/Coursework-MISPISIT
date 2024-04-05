@@ -2,12 +2,13 @@ package com.example.jspdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+
+import java.io.IOException;
 
 @SpringBootApplication
-@ComponentScan({"com.example.jspdemo"})
 public class MainApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class,args);
+    public static void main(String[] args) throws IOException {
+        SpringApplication.run(MainApplication.class, args);
+        Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler http://localhost:8091");
     }
 }

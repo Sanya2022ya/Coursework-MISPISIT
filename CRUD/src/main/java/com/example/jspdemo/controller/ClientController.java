@@ -20,6 +20,7 @@ public class ClientController {
 
     @GetMapping({"/viewClientList"})
     public String viewClientList(@ModelAttribute("message")String message, Model model){
+        getClientsByPassport("", model);
         model.addAttribute("clientList",clientService.getAllClients());
         model.addAttribute("message", message);
         return "ViewClientList";

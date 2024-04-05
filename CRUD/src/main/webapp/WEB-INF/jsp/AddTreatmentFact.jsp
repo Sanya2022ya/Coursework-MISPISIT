@@ -7,7 +7,7 @@
 <head>
     <link rel="stylesheet" href="/App.css">
     <meta charset="UTF-8">
-    <title>Add Client</title>
+    <title>Add Treatment Fact</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,24 +16,24 @@
 
 </head>
 <style>
-        a{
-            color: white;
-        }
-        a:hover {
-            color: white;
-            text-decoration: none;
-        }
-         .btn {
-           background: var(--clr-primary-5);
-           color: white;
-         }
-        .btn-success {
-          border-color: var(--clr-primary-5); /* Измените цвет рамки на цвет вашего фона */
-          margin-left: 0.5rem;
-        }
-        .btn-danger {
-          border-color: var(--clr-primary-5); /* Измените цвет рамки на цвет вашего фона */
-        }
+    a{
+        color: white;
+    }
+    a:hover {
+        color: white;
+        text-decoration: none;
+    }
+     .btn {
+       background: var(--clr-primary-5);
+       color: white;
+     }
+    .btn-success {
+      border-color: var(--clr-primary-5);
+      margin-left: 0.5rem;
+    }
+    .btn-danger {
+      border-color: var(--clr-primary-5);
+    }
 
 .btn-end{
 width:170px;
@@ -47,57 +47,35 @@ width:170px;
     </style>
 <body>
 <div class="container">
-    <h1 class="p-3"> Добавьте клиента </h1>
+    <h1 class="p-3"> Добавить факт обращения </h1>
 
-    <form:form action="/saveClient" method="post" modelAttribute="client">
+    <form:form action="/saveTreatmentFact" method="post" modelAttribute="treatmentFact">
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="fio">ФИО</label>
+                <label class="col-md-3" for="clientId">ID Клиента</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="fio" id="fio" class="form-control input-sm" required="required"/>
+                    <form:input type="number" path="clientId" id="clientId" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="address">Адрес</label>
+                <label class="col-md-3" for="serviceName">Наименование услуги</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="address" id="address" class="form-control input-sm"/>
+                    <form:input type="text" path="serviceName" id="serviceName" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="phone_number">Номер телефона</label>
+                <label class="col-md-3" for="employeeId">ID Сотрудника</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="phone_number" id="phone_number" class="form-control input-sm"/>
+                    <form:input type="number" path="employeeId" id="employeeId" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3" for="passport">Паспорт</label>
-                <div class="col-md-6">
-                    <form:input type="text" path="passport" id="passport" class="form-control input-sm" required="required"/>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3" for="client_type">Тип клиента</label>
-                <div class="col-md-6">
-                    <form:select path="client_type" class="form-control input-sm">
-                        <option value="Юр.лицо">Юр.лицо</option>
-                        <option value="Физ.лицо">Физ.лицо</option>
-                    </form:select>
-                </div>
-            </div>
-        </div>
-
 
         <div class="row p-2">
             <div class="col-md-2">
@@ -112,7 +90,7 @@ width:170px;
         var msg = "${message}";
         console.log(msg);
         if (msg == "Save Failure") {
-            toastr["error"]("Something went wrong with the save.");
+            toastr["error"]("Что-то пошло не так при сохранении.");
         }
 
         toastr.options = {

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/App.css">
-    <title>View Client List</title>
+    <title>View Employee List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -47,49 +47,49 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="p-3">Клиенты</h1>
-    <form action="/getClientsByPassport" method="GET" class="form-inline">
+    <h1 class="p-3">Сотрудники</h1>
+    <form action="/getEmployeesByPassport" method="GET" class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
-            <label for="passport" class="sr-only">Паспорт</label>
-            <input type="text" class="form-control" id="passport" name="passport" placeholder="Введите ФИО">
+            <label for="fio" class="sr-only">Фио</label>
+            <input type="text" class="form-control" id="fio" name="fio" placeholder="Введите фио">
         </div>
-        <button type="submit" class="btn mb-2">Получить клиентов</button>
+        <button type="submit" class="btn mb-2">Получить сотрудников</button>
     </form>
 
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
-            <th>ФИО</th>
-            <th>Адрес</th>
-            <th>Номер телефона</th>
-            <th>Паспорт</th>
-            <th>Тип клиента</th>
+            <th>Имя сотрудника</th>
+            <th>Идентификатор должности</th>
+            <th>Опыт работы</th>
+            <th>Контактная информация</th>
+            <th>Уровень образования</th>
             <th>Редактировать</th>
             <th>Удалить</th>
         </tr>
-        <c:forEach var="client" items="${clients}">
+        <c:forEach var="employee" items="${employees}">
             <tr>
-                <td>${client.id}</td>
-                <td>${client.fio}</td>
-                <td>${client.address}</td>
-                <td>${client.phone_number}</td>
-                <td>${client.passport}</td>
-                <td>${client.client_type}</td>
+                <td>${employee.id}</td>
+                <td>${employee.fio}</td>
+                <td>${employee.positionId}</td>
+                <td>${employee.experience}</td>
+                <td>${employee.phoneNumber}</td>
+                <td>${employee.educationLevel}</td>
                 <td>
                     <button type="button" class="btn btn-success">
-                        <a href="/editClient/${client.id}">Редактировать</a>
+                        <a href="/editEmployee/${employee.id}">Редактировать</a>
                     </button>
                 </td>
                 <td>
                     <button type="button" class="btn btn-danger">
-                        <a href="/deleteClient/${client.id}">Удалить</a>
+                        <a href="/deleteEmployee/${employee.id}">Удалить</a>
                     </button>
                 </td>
             </tr>
         </c:forEach>
     </table>
 
-    <a href="/AddClient" class="btn btn-block">Добавить нового клиента</a>
+    <a href="/AddEmployee" class="btn btn-block">Добавить нового клиента</a>
 
     <div style="display: flex; justify-content: center;margin-top: 20px;">
         <ul style="list-style: none;">

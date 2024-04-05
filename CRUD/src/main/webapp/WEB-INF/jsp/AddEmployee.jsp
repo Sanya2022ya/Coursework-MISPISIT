@@ -7,7 +7,7 @@
 <head>
     <link rel="stylesheet" href="/App.css">
     <meta charset="UTF-8">
-    <title>Add Client</title>
+    <title>Add Employee</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -49,10 +49,10 @@ width:170px;
 <div class="container">
     <h1 class="p-3"> Добавьте клиента </h1>
 
-    <form:form action="/saveClient" method="post" modelAttribute="client">
+    <form:form action="/saveEmployee" method="post" modelAttribute="employee">
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="fio">ФИО</label>
+                <label class="col-md-3" for="fio">Имя сотрудника</label>
                 <div class="col-md-6">
                     <form:input type="text" path="fio" id="fio" class="form-control input-sm" required="required"/>
                 </div>
@@ -61,43 +61,39 @@ width:170px;
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="address">Адрес</label>
+                <label class="col-md-3" for="positionId">Идентификатор должности</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="address" id="address" class="form-control input-sm"/>
+                    <form:input type="text" path="positionId" id="positionId" class="form-control input-sm"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="phone_number">Номер телефона</label>
+                <label class="col-md-3" for="experience">Опыт работы</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="phone_number" id="phone_number" class="form-control input-sm"/>
+                    <form:input type="text" path="experience" id="experience" class="form-control input-sm"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="passport">Паспорт</label>
+                <label class="col-md-3" for="phoneNumber">Контактная информация</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="passport" id="passport" class="form-control input-sm" required="required"/>
+                    <form:input type="text" path="phoneNumber" id="phoneNumber" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="client_type">Тип клиента</label>
+                <label class="col-md-3" for="educationLevel">Уровень образования</label>
                 <div class="col-md-6">
-                    <form:select path="client_type" class="form-control input-sm">
-                        <option value="Юр.лицо">Юр.лицо</option>
-                        <option value="Физ.лицо">Физ.лицо</option>
-                    </form:select>
+                    <form:input type="text" path="educationLevel" id="educationLevel" class="form-control input-sm"/>
                 </div>
             </div>
         </div>
-
 
         <div class="row p-2">
             <div class="col-md-2">
@@ -105,7 +101,7 @@ width:170px;
             </div>
         </div>
     </form:form>
-</div>
+
 
 <script th:inline="javascript">
     window.onload = function() {

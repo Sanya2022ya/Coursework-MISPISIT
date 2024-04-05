@@ -5,99 +5,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/App.css">
     <meta charset="UTF-8">
-    <title>Add Client</title>
+    <title>Edit Treatment Fact</title>
+    <link rel="stylesheet" href="/App.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-</head>
-<style>
-        a{
+    <style>
+        a {
             color: white;
         }
+
         a:hover {
             color: white;
             text-decoration: none;
         }
-         .btn {
-           background: var(--clr-primary-5);
-           color: white;
-         }
+
+        .btn {
+            background: var(--clr-primary-5);
+            color: white;
+        }
+
         .btn-success {
-          border-color: var(--clr-primary-5); /* Измените цвет рамки на цвет вашего фона */
-          margin-left: 0.5rem;
+            border-color: var(--clr-primary-5);
+            margin-left: 0.5rem;
         }
+
         .btn-danger {
-          border-color: var(--clr-primary-5); /* Измените цвет рамки на цвет вашего фона */
+            border-color: var(--clr-primary-5);
         }
 
-.btn-end{
-width:170px;
-}
+        .btn-end {
+            width: 170px;
+        }
 
-.form-inline .form-control {
-    display: inline-block;
-    width: 300px;
-    vertical-align: middle;
-}
+        .form-inline .form-control {
+            display: inline-block;
+            width: 300px;
+            vertical-align: middle;
+        }
     </style>
+</head>
 <body>
 <div class="container">
-    <h1 class="p-3"> Добавьте клиента </h1>
+    <h1 class="p-3"> Редактировать факт обращения </h1>
 
-    <form:form action="/saveClient" method="post" modelAttribute="client">
+    <form:form action="/editSaveTreatmentFact" method="post" modelAttribute="treatmentFact">
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="fio">ФИО</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="fio" id="fio" class="form-control input-sm" required="required"/>
+                    <form:hidden path="id" class="form-control input-sm"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="address">Адрес</label>
+                <label class="col-md-3" for="client_id">ID Клиента</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="address" id="address" class="form-control input-sm"/>
+                    <form:input type="text" path="clientId" id="client_id" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="phone_number">Номер телефона</label>
+                <label class="col-md-3" for="service_name">Наименование услуги</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="phone_number" id="phone_number" class="form-control input-sm"/>
+                    <form:input type="text" path="serviceName" id="service_name" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="passport">Паспорт</label>
+                <label class="col-md-3" for="employee_id">ID Сотрудника</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="passport" id="passport" class="form-control input-sm" required="required"/>
+                    <form:input type="text" path="employeeId" id="employee_id" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3" for="client_type">Тип клиента</label>
-                <div class="col-md-6">
-                    <form:select path="client_type" class="form-control input-sm">
-                        <option value="Юр.лицо">Юр.лицо</option>
-                        <option value="Физ.лицо">Физ.лицо</option>
-                    </form:select>
-                </div>
-            </div>
-        </div>
-
 
         <div class="row p-2">
             <div class="col-md-2">
@@ -111,8 +100,8 @@ width:170px;
     window.onload = function() {
         var msg = "${message}";
         console.log(msg);
-        if (msg == "Save Failure") {
-            toastr["error"]("Something went wrong with the save.");
+        if (msg == "Edit Failure") {
+            Command: toastr["error"]("Something went wrong with the edit.")
         }
 
         toastr.options = {

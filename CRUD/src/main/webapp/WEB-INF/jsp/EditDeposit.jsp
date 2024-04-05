@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Edit Client</title>
+    <title>Edit Deposit</title>
     <link rel="stylesheet" href="/App.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -50,9 +50,9 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="p-3"> Редактировать клиента </h1>
+    <h1 class="p-3"> Редактировать депозит </h1>
 
-    <form:form action="/editSaveClient" method="post" modelAttribute="client">
+    <form:form action="/editSaveDeposit" method="post" modelAttribute="deposit">
         <div class="row">
             <div class="form-group col-md-12">
                 <div class="col-md-6">
@@ -60,11 +60,11 @@
                 </div>
             </div>
         </div>
-<div class="row">
+        <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="fio">ФИО</label>
+                <label class="col-md-3" for="depositName">Название депозита</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="fio" id="fio" class="form-control input-sm" required="required"/>
+                    <form:input type="text" path="depositName" id="depositName" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
@@ -72,44 +72,55 @@
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="passport">Паспорт</label>
+                <label class="col-md-3" for="duration">Срок депозита (в месяцах)</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="passport" id="passport" class="form-control input-sm" required="required"/>
+                    <form:input type="number" path="duration" id="duration" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="phone_number">Номер телефона</label>
+                <label class="col-md-3" for="amount">Сумма депозита</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="phone_number" id="phone_number" class="form-control input-sm" required="required"/>
+                    <form:input type="number" path="amount" id="amount" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="address">Адрес</label>
+                <label class="col-md-3" for="interestCalculationType">Тип расчета процентов</label>
                 <div class="col-md-6">
-                    <form:input type="text" path="address" id="address" class="form-control input-sm"/>
+                  <form:select path="interestCalculationType" class="form-control input-sm">
+                                         <option value="Аннуитетный" <c:if test="${deposit.interestCalculationType == 'Аннуитетный'}">selected</c:if>>Аннуитетный</option>
+                                         <option value="Дифференцированный" <c:if test="${deposit.interestCalculationType == 'Дифференцированный'}">selected</c:if>>Дифференцированный</option>
+                                     </form:select>
                 </div>
             </div>
         </div>
 
-       <div class="row">
-           <div class="form-group col-md-12">
-               <label class="col-md-3" for="client_type">Тип клиента</label>
-               <div class="col-md-6">
-                   <form:select path="client_type" class="form-control input-sm">
-                       <option value="Юр.лицо" <c:if test="${client.client_type == 'Юр.лицо'}">selected</c:if>>Юр.лицо</option>
-                       <option value="Физ.лицо" <c:if test="${client.client_type == 'Физ.лицо'}">selected</c:if>>Физ.лицо</option>
-                   </form:select>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-3" for="interestRate">Процентная ставка</label>
+                <div class="col-md-6">
+                    <form:input type="number" path="interestRate" id="interestRate" class="form-control input-sm" required="required"/>
+                </div>
+            </div>
+        </div>
 
-               </div>
-           </div>
-       </div>
-
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-3" for="currency">Валюта</label>
+                <div class="col-md-6">
+                    <form:select path="currency" class="form-control input-sm">
+                    <option value="Рубль" <c:if test="${deposit.currency == 'Рубль'}">selected</c:if>>Рубль</option>
+                    <option value="Доллар" <c:if test="${deposit.currency == 'Доллар'}">selected</c:if>>Доллар</option>
+                    <option value="Юань" <c:if test="${deposit.currency == 'Юань'}">selected</c:if>>Юань</option>
+                    </form:select>
+                </div>
+            </div>
+        </div>
 
         <div class="row p-2">
             <div class="col-md-2">
