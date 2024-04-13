@@ -1,13 +1,15 @@
 CREATE TABLE Clients (
     id SERIAL PRIMARY KEY,
-    passport VARCHAR(20) NOT NULL,
-    ticket_number VARCHAR(20),
-    client_category VARCHAR(50)
+    fio VARCHAR(30) UNIQUE NOT NULL,
+    address VARCHAR(50) NOT NULL,
+    phone_number VARCHAR(20),
+    passport VARCHAR(20),
+    client_type VARCHAR(20)
 );
 
 CREATE TABLE Positions (
     id SERIAL PRIMARY KEY,
-    position_title VARCHAR(100) NOT NULL,
+    position_title VARCHAR(100) UNIQUE NOT NULL,
     experience_requirements INTEGER,
     employment_type VARCHAR(50),
     field_of_application VARCHAR(100)
@@ -16,8 +18,8 @@ CREATE TABLE Positions (
 
 CREATE TABLE Employees (
     id SERIAL PRIMARY KEY,
-    employee_name VARCHAR(100) NOT NULL,
-    position_id INTEGER REFERENCES Positions(id) ON DELETE CASCADE,
+    employee_name VARCHAR(100) UNIQUE NOT NULL,
+    position_id VARCHAR(100) REFERENCES Positions(position_title) ON DELETE CASCADE,
     experience INTEGER,
     contact_info VARCHAR(255),
     education_level VARCHAR(100)
@@ -26,14 +28,14 @@ CREATE TABLE Employees (
 
 CREATE TABLE TreatmentFacts (
     id SERIAL PRIMARY KEY,
-    client_id INTEGER REFERENCES Clients(id) ON DELETE CASCADE,
+    client_id VARCHAR(100) REFERENCES Clients(fio) ON DELETE CASCADE,
     service_name VARCHAR(255) NOT NULL,
-    employee_id INTEGER REFERENCES Employees(id) ON DELETE CASCADE
+    employee_id VARCHAR(100) REFERENCES Employees(employee_name) ON DELETE CASCADE
 );
 
 CREATE TABLE Deposits (
     id SERIAL PRIMARY KEY,
-    deposit_name VARCHAR(255) NOT NULL,
+    deposit_name VARCHAR(255) UNIQUE NOT NULL,
     duration INTEGER NOT NULL,
     amount DECIMAL NOT NULL,
     interest_calculation_type VARCHAR(255) NOT NULL,
@@ -43,8 +45,8 @@ CREATE TABLE Deposits (
 
 CREATE TABLE Deposits_Opened (
     id SERIAL PRIMARY KEY,
-    client_id INTEGER REFERENCES Clients(id) ON DELETE CASCADE,
-    deposit_id INTEGER REFERENCES Deposits(id) ON DELETE CASCADE,
+    client_id VARCHAR(255) REFERENCES Clients(fio) ON DELETE CASCADE,
+    deposit_id VARCHAR(255) REFERENCES Deposits(deposit_name) ON DELETE CASCADE,
     opening_date DATE NOT NULL,
     location VARCHAR(255) NOT NULL
 );
