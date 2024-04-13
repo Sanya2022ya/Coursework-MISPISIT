@@ -50,7 +50,7 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="p-3"> Редактировать депозит </h1>
+    <h1 class="p-3"> Редактировать вклад </h1>
 
     <form:form action="/editSaveDeposit" method="post" modelAttribute="deposit">
         <div class="row">
@@ -62,7 +62,7 @@
         </div>
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="depositName">Название депозита</label>
+                <label class="col-md-3" for="depositName">Название вклада</label>
                 <div class="col-md-6">
                     <form:input type="text" path="depositName" id="depositName" class="form-control input-sm" required="required"/>
                 </div>
@@ -72,7 +72,7 @@
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="duration">Срок депозита (в месяцах)</label>
+                <label class="col-md-3" for="duration">Срок вклада (в годах)</label>
                 <div class="col-md-6">
                     <form:input type="number" path="duration" id="duration" class="form-control input-sm" required="required"/>
                 </div>
@@ -81,7 +81,7 @@
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="amount">Сумма депозита</label>
+                <label class="col-md-3" for="amount">Сумма вклада</label>
                 <div class="col-md-6">
                     <form:input type="number" path="amount" id="amount" class="form-control input-sm" required="required"/>
                 </div>

@@ -47,23 +47,23 @@ width:170px;
     </style>
 <body>
 <div class="container">
-    <h1 class="p-3"> Добавить депозит </h1>
+    <h1 class="p-3"> Добавить вклад </h1>
 
     <form:form action="/saveDepositOpened" method="post" modelAttribute="depositOpened">
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="clientId">ID Клиента</label>
+                <label class="col-md-3" for="clientId">ФИО Клиента</label>
                 <div class="col-md-6">
-                    <form:input type="number" path="clientId" id="clientId" class="form-control input-sm" required="required"/>
+                    <form:input type="text" path="clientId" id="clientId" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="depositId">ID Депозита</label>
+                <label class="col-md-3" for="depositId">Название вклада</label>
                 <div class="col-md-6">
-                    <form:input type="number" path="depositId" id="depositId" class="form-control input-sm" required="required"/>
+                    <form:input type="text" path="depositId" id="depositId" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>

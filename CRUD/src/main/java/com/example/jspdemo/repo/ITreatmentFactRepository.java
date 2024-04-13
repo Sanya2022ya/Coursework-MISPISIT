@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface ITreatmentFactRepository extends JpaRepository<TreatmentFact, Long> {
-    List<TreatmentFact> findByEmployeeId(Long employeeId);
+    List<TreatmentFact> findByEmployeeId(String employeeId);
 }

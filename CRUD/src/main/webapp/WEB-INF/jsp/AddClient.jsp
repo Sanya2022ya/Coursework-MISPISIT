@@ -79,7 +79,7 @@ width:170px;
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="passport">Паспорт</label>
+                <label class="col-md-3" for="passport">Паспорт/ОГРН</label>
                 <div class="col-md-6">
                     <form:input type="text" path="passport" id="passport" class="form-control input-sm" required="required"/>
                 </div>

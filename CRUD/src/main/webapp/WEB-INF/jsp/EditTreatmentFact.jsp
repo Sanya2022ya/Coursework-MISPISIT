@@ -63,7 +63,7 @@
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="client_id">ID Клиента</label>
+                <label class="col-md-3" for="client_id">ФИО Клиента</label>
                 <div class="col-md-6">
                     <form:input type="text" path="clientId" id="client_id" class="form-control input-sm" required="required"/>
                 </div>
@@ -72,7 +72,7 @@
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="service_name">Наименование услуги</label>
+                <label class="col-md-3" for="service_name">Наименование вклада</label>
                 <div class="col-md-6">
                     <form:input type="text" path="serviceName" id="service_name" class="form-control input-sm" required="required"/>
                 </div>
@@ -81,7 +81,7 @@
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="employee_id">ID Сотрудника</label>
+                <label class="col-md-3" for="employee_id">ФИО Сотрудника</label>
                 <div class="col-md-6">
                     <form:input type="text" path="employeeId" id="employee_id" class="form-control input-sm" required="required"/>
                 </div>

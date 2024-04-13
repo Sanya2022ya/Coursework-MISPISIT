@@ -20,7 +20,7 @@ public class TreatmentFactController {
     TreatmentFactService treatmentFactService;
 
     @GetMapping("/ViewTreatmentFactsList")
-    public String ViewTreatmentFacts(@RequestParam(value = "clientId", required = false) Long clientId, Model model) {
+    public String ViewTreatmentFacts(@RequestParam(value = "clientId", required = false) String clientId, Model model) {
         List<TreatmentFact> treatmentFacts;
         if (clientId != null) {
             // Получение фактов обработки для определенного клиента из сервиса
@@ -86,7 +86,7 @@ public class TreatmentFactController {
         return "redirect:/ViewTreatmentFactsList";
     }
     @GetMapping("/gettreatmentFactsByEmployeeId")
-    public String getClientsByEmployeeId(@RequestParam(value = "employeeId", required = false) Long employeeId, Model model) {
+    public String getClientsByEmployeeId(@RequestParam(value = "employeeId", required = false) String employeeId, Model model) {
         List<TreatmentFact> treatmentFacts;
         if (employeeId != null) {
             // Получение фактов лечения для определенного сотрудника из сервиса

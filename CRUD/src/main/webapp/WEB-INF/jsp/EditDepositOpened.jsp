@@ -50,9 +50,9 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="p-3"> Редактировать факт обращения </h1>
+    <h1 class="p-3"> Редактировать вклады </h1>
 
-    <<form:form action="/editSaveDepositOpened" method="post" modelAttribute="depositOpened">
+    <form:form action="/editSaveDepositOpened" method="post" modelAttribute="depositOpened">
          <div class="row">
              <div class="form-group col-md-12">
                <form:hidden path="id" class="form-control input-sm"/>
@@ -61,7 +61,7 @@
 
          <div class="row">
              <div class="form-group col-md-12">
-                 <label class="col-md-3" for="client_id">ID Клиента</label>
+                 <label class="col-md-3" for="client_id">ФИО Клиента</label>
                  <div class="col-md-6">
                      <form:input type="text" path="clientId" id="client_id" class="form-control input-sm" required="required"/>
                  </div>
@@ -70,7 +70,7 @@
 
          <div class="row">
              <div class="form-group col-md-12">
-                 <label class="col-md-3" for="deposit_id">ID Депозита</label>
+                 <label class="col-md-3" for="deposit_id">Название вклада</label>
                  <div class="col-md-6">
                      <form:input type="text" path="depositId" id="deposit_id" class="form-control input-sm" required="required"/>
                  </div>

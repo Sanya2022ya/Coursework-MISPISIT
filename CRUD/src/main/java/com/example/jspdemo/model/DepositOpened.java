@@ -12,10 +12,10 @@ public class DepositOpened {
     private Long id;
 
     @Column(name = "client_id")
-    private Long clientId;
+    private String clientId;
 
     @Column(name = "deposit_id")
-    private Long depositId;
+    private String depositId;
 
     @Column(name = "opening_date")
     private Date openingDate;
@@ -34,19 +34,19 @@ public class DepositOpened {
         this.id = id;
     }
 
-    public Long getClientId() {
+    public String getClientId() {
         return clientId;
     }
 
-    public void setClientId(Long clientId) {
+    public void setClientId(String clientId) {
         this.clientId = clientId;
     }
 
-    public Long getDepositId() {
+    public String getDepositId() {
         return depositId;
     }
 
-    public void setDepositId(Long depositId) {
+    public void setDepositId(String depositId) {
         this.depositId = depositId;
     }
 

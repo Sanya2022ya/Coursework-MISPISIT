@@ -58,8 +58,8 @@
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
-            <th>Id клиента</th>
-            <th>Id депозита</th>
+            <th>ФИО клиента</th>
+            <th>Название вклада</th>
             <th>Дата открытия</th>
             <th>Местоположение</th>
             <th>Редактировать</th>
@@ -85,7 +85,7 @@
             </tr>
         </c:forEach>
     </table>
- <a href="/AddDepositOpened" class="btn btn-block">Добавить новый депозит</a>
+ <a href="/AddDepositOpened" class="btn btn-block">Добавить новый вклад</a>
     <div style="display: flex; justify-content: center;margin-top: 20px;">
         <ul style="list-style: none;">
             <li><a href="/layout" class="btn btn-end btn-block">Назад</a></li>

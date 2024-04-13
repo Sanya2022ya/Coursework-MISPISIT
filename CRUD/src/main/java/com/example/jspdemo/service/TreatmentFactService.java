@@ -33,7 +33,7 @@ public class TreatmentFactService {
         treatmentFactRepository.deleteById(id);
         return !treatmentFactRepository.findById(id).isPresent();
     }
-    public List<TreatmentFact> getTreatmentFactsByEmployeeId(Long employeeId) {
+    public List<TreatmentFact> getTreatmentFactsByEmployeeId(String employeeId) {
         return treatmentFactRepository.findByEmployeeId(employeeId);
     }
 }

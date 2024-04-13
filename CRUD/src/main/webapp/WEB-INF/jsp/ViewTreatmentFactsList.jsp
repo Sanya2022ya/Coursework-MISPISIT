@@ -51,16 +51,16 @@
 <form action="/gettreatmentFactsByEmployeeId" method="GET" class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
             <label for="passport" class="sr-only">Номер сотрудника</label>
-            <input type="text" class="form-control" id="employeeId" name="employeeId" placeholder="Введите номер сотрудника">
+            <input type="text" class="form-control" id="employeeId" name="employeeId" placeholder="Введите ФИО сотрудника">
         </div>
         <button type="submit" class="btn mb-2">Получить факты обращения</button>
     </form>
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
-            <th>Id клиента</th>
-            <th>Наименование услуги</th>
-            <th>Id сотрудника</th>
+            <th>ФИО клиента</th>
+            <th>Наименование вклада</th>
+            <th>ФИО сотрудника</th>
             <th>Редактировать</th>
             <th>Удалить</th>
         </tr>

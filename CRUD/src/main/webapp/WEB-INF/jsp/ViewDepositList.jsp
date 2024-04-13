@@ -58,19 +58,19 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="p-3">Депозиты</h1>
+    <h1 class="p-3">Вклады</h1>
     <form action="/getDepositsByDepositName" method="GET" class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
-            <label for="depositName" class="sr-only">Имя депозита</label>
-            <input type="text" class="form-control" id="depositName" name="depositName" placeholder="Введите имя депозита">
+            <label for="depositName" class="sr-only">Имя вклада</label>
+            <input type="text" class="form-control" id="depositName" name="depositName" placeholder="Введите название вклада">
         </div>
-        <button type="submit" class="btn mb-2">Получить депозиты</button>
+        <button type="submit" class="btn mb-2">Получить вклады</button>
     </form>
 
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
-            <th>Имя депозита</th>
+            <th>Название вклада</th>
             <th>Продолжительность</th>
             <th>Сумма</th>
             <th>Тип расчета процентов</th>
@@ -102,7 +102,7 @@
         </c:forEach>
     </table>
 
-    <a href="/AddDeposit" class="btn btn-block btn-add">Добавить новый депозит</a>
+    <a href="/AddDeposit" class="btn btn-block btn-add">Добавить новый вклад</a>
 
     <div style="display: flex; justify-content: center;margin-top: 20px;">
         <ul style="list-style: none;">

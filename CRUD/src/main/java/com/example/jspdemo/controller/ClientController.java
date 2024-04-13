@@ -20,7 +20,7 @@ public class ClientController {
 
     @GetMapping({"/viewClientList"})
     public String viewClientList(@ModelAttribute("message")String message, Model model){
-        getClientsByPassport("", model);
+        getClientsByFio("", model);
         model.addAttribute("clientList",clientService.getAllClients());
         model.addAttribute("message", message);
         return "ViewClientList";
@@ -75,12 +75,12 @@ public class ClientController {
     public String showMainPage() {
         return "main";
     }
-    @GetMapping("/getClientsByPassport")
-    public String getClientsByPassport(@RequestParam(value = "passport", required = false) String passport, Model model) {
+    @GetMapping("/getClientsByFio")
+    public String getClientsByFio(@RequestParam(value = "fio", required = false) String fio, Model model) {
         List<Client> clients;
-        if (passport != null && !passport.isEmpty()) {
+        if (fio != null && !fio.isEmpty()) {
             // Получение клиентов с указанным номером паспорта из сервиса
-            clients = clientService.getClientsByPassport(passport);
+            clients = clientService.getClientsByFio(fio);
         } else {
             // Получение всех клиентов из сервиса
             clients = clientService.getAllClients();

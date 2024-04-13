@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface IClientRepository extends JpaRepository<Client, Long> {
-    List<Client> findByPassport(String passport);
+    List<Client> findByFio(String fio);
 }

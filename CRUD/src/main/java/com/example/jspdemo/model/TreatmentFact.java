@@ -10,13 +10,13 @@ public class TreatmentFact {
     private Long id;
 
     @Column(name = "client_id")
-    private Long clientId;
+    private String clientId;
 
     @Column(name = "service_name")
     private String serviceName;
 
     @Column(name = "employee_id")
-    private Long employeeId;
+    private String employeeId;
 
     public TreatmentFact() {
     }
@@ -29,11 +29,11 @@ public class TreatmentFact {
         this.id = id;
     }
 
-    public Long getClientId() {
+    public String getClientId() {
         return clientId;
     }
 
-    public void setClientId(Long clientId) {
+    public void setClientId(String clientId) {
         this.clientId = clientId;
     }
 
@@ -45,11 +45,11 @@ public class TreatmentFact {
         this.serviceName = serviceName;
     }
 
-    public Long getEmployeeId() {
+    public String getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(Long employeeId) {
+    public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
 }

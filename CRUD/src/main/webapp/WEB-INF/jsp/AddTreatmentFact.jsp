@@ -52,16 +52,16 @@ width:170px;
     <form:form action="/saveTreatmentFact" method="post" modelAttribute="treatmentFact">
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="clientId">ID Клиента</label>
+                <label class="col-md-3" for="clientId">ФИО клиента</label>
                 <div class="col-md-6">
-                    <form:input type="number" path="clientId" id="clientId" class="form-control input-sm" required="required"/>
+                    <form:input type="text" path="clientId" id="clientId" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="serviceName">Наименование услуги</label>
+                <label class="col-md-3" for="serviceName">Наименование вклада</label>
                 <div class="col-md-6">
                     <form:input type="text" path="serviceName" id="serviceName" class="form-control input-sm" required="required"/>
                 </div>
@@ -70,9 +70,9 @@ width:170px;
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="employeeId">ID Сотрудника</label>
+                <label class="col-md-3" for="employeeId">ФИО сотрудника</label>
                 <div class="col-md-6">
-                    <form:input type="number" path="employeeId" id="employeeId" class="form-control input-sm" required="required"/>
+                    <form:input type="text" path="employeeId" id="employeeId" class="form-control input-sm" required="required"/>
                 </div>
             </div>
         </div>

@@ -48,10 +48,10 @@
 <body>
 <div class="container">
     <h1 class="p-3">Клиенты</h1>
-    <form action="/getClientsByPassport" method="GET" class="form-inline">
+    <form action="/getClientsByFio" method="GET" class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
-            <label for="passport" class="sr-only">Паспорт</label>
-            <input type="text" class="form-control" id="passport" name="passport" placeholder="Введите ФИО">
+            <label for="fio" class="sr-only">ФИО</label>
+            <input type="text" class="form-control" id="fio" name="fio" placeholder="Введите ФИО">
         </div>
         <button type="submit" class="btn mb-2">Получить клиентов</button>
     </form>
@@ -62,7 +62,7 @@
             <th>ФИО</th>
             <th>Адрес</th>
             <th>Номер телефона</th>
-            <th>Паспорт</th>
+            <th>Паспорт/ОГРН</th>
             <th>Тип клиента</th>
             <th>Редактировать</th>
             <th>Удалить</th>

@@ -41,7 +41,7 @@ margin-top: 15.25rem;
 <a href="/ViewTreatmentFactsList" class="btn" >Факты обращения</a>
             </div>
 <div class="section-center services-center">
-<a href="/ViewDepositOpenedList" class="btn" >Оформленные вклады</a>
+<a href="/ViewDepositOpenedList" class="btn" >Открытые вклады</a>
             </div>
 <div class="section-center services-center">
 <a href="/viewDepositList" class="btn" >Вклады</a>

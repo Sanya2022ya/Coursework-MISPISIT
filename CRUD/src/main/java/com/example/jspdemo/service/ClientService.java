@@ -12,8 +12,8 @@ import java.util.List;
 public class ClientService {
     @Autowired
     IClientRepository clientrepo;
-    public List<Client> getClientsByPassport(String passport) {
-        return clientrepo.findByPassport(passport);
+    public List<Client> getClientsByFio(String fio) {
+        return clientrepo.findByFio(fio);
     }
     public List<Client> getAllClients(){
     List<Client> clientList = new ArrayList<>();

@@ -47,12 +47,12 @@ width:170px;
     </style>
 <body>
 <div class="container">
-    <h1 class="p-3"> Добавьте клиента </h1>
+    <h1 class="p-3"> Добавьте сотрудника </h1>
 
     <form:form action="/saveEmployee" method="post" modelAttribute="employee">
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="fio">Имя сотрудника</label>
+                <label class="col-md-3" for="fio">ФИО сотрудника</label>
                 <div class="col-md-6">
                     <form:input type="text" path="fio" id="fio" class="form-control input-sm" required="required"/>
                 </div>
@@ -61,7 +61,7 @@ width:170px;
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3" for="positionId">Идентификатор должности</label>
+                <label class="col-md-3" for="positionId">Наименование должности</label>
                 <div class="col-md-6">
                     <form:input type="text" path="positionId" id="positionId" class="form-control input-sm"/>
                 </div>

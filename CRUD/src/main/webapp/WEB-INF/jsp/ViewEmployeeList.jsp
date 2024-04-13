@@ -51,7 +51,7 @@
     <form action="/getEmployeesByPassport" method="GET" class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
             <label for="fio" class="sr-only">Фио</label>
-            <input type="text" class="form-control" id="fio" name="fio" placeholder="Введите фио">
+            <input type="text" class="form-control" id="fio" name="fio" placeholder="Введите ФИО">
         </div>
         <button type="submit" class="btn mb-2">Получить сотрудников</button>
     </form>
@@ -59,8 +59,8 @@
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
-            <th>Имя сотрудника</th>
-            <th>Идентификатор должности</th>
+            <th>ФИО сотрудника</th>
+            <th>Наименование должности</th>
             <th>Опыт работы</th>
             <th>Контактная информация</th>
             <th>Уровень образования</th>
@@ -89,7 +89,7 @@
         </c:forEach>
     </table>
 
-    <a href="/AddEmployee" class="btn btn-block">Добавить нового клиента</a>
+    <a href="/AddEmployee" class="btn btn-block">Добавить нового сотрудника</a>
 
     <div style="display: flex; justify-content: center;margin-top: 20px;">
         <ul style="list-style: none;">

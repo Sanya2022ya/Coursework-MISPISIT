@@ -13,7 +13,7 @@ public class Employee {
     private String fio; // Меняем название поля fio на employee_name
 
     @Column(name = "position_id")
-    private Integer positionId; // Изменяем тип и название поля
+    private String positionId; // Изменяем тип и название поля
 
     @Column(name = "experience")
     private Integer experience;
@@ -44,11 +44,11 @@ public class Employee {
         this.fio = fio;
     }
 
-    public Integer getPositionId() {
+    public String getPositionId() {
         return positionId;
     }
 
-    public void setPositionId(Integer positionId) {
+    public void setPositionId(String positionId) {
         this.positionId = positionId;
     }
 
